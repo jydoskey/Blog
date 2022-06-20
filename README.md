@@ -1,6 +1,6 @@
 # Preview
 
-![Blog Webapp Preview](@/assets/images/preview.png)
+![Blog Webapp Preview](https://github.com/jydoskey/Blog/blob/main/src/assets/images/preview.png)
 
 ## Recommended IDE Setup
 
