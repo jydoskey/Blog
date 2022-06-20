@@ -133,7 +133,7 @@
                           placeholder="Password"
                         />
                       </div>
-                      <div class="w-full md:w-1/2 px-3">
+                      <div class="w-full md:w-1/2 px-3 md:pt-0 pt-6">
                         <label for="password" class="sr-only">Password</label>
                         <input
                           v-model="password"
