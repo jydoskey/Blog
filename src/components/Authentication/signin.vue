@@ -2,7 +2,20 @@
   <div class="blog border-0">
     <div class="blog-main">
       <div class="blog-sub">
-        <div class="section-img"></div>
+        <div class="section-img">
+          <img
+            class="section-logo"
+            src="@/assets/images/Brandmark.svg"
+            alt="logo"
+          />
+          <div class="section-text">
+            <h1 class="blog-header">Unlock the creative energy to create</h1>
+            <p class="blog-text">
+              Blogit is a platform designed to enable you reduce a busywork
+              flow, so as to get focused on what matters.
+            </p>
+          </div>
+        </div>
         <div>
           <section class="blog-form">
             <div class="form-body" v-if="signin">
@@ -133,7 +146,7 @@
                           placeholder="Password"
                         />
                       </div>
-                      <div class="w-full md:w-1/2 px-3">
+                      <div class="w-full md:w-1/2 px-3 md:pt-0 pt-6">
                         <label for="password" class="sr-only">Password</label>
                         <input
                           v-model="password"
@@ -148,7 +161,7 @@
                   </div>
                   <div class="flex justify-between">
                     <label class="block text-gray-500 font-bold items-center">
-                      <input class="mr-2" type="checkbox" required/>
+                      <input class="mr-2" type="checkbox" required />
                       <span class="text-sm"
                         >Agree to our
                         <span class="!text-[#00C2EF] cursor-pointer">
@@ -225,6 +238,7 @@ export default {
 <style scoped>
 * {
   @apply text-[#2E3333];
+  box-sizing: border-box;
 }
 
 .blog {
@@ -244,24 +258,24 @@ export default {
   @apply lg:px-12 px-4;
 }
 
-.blog-header {
-  @apply md:text-2xl font-bold pb-2 pt-2;
-}
-
-.blog-text {
-  @apply text-[#636363] md:text-base;
-}
-
-html {
-  scroll-behavior: smooth;
+.section-logo {
+  @apply h-24 px-16 mt-12;
 }
 
 .section-img {
   @apply lg:block hidden bg-[#E6FBFF] bg-[url('@/assets/images/Background.svg')] h-screen bg-cover w-full;
 }
 
-* {
-  box-sizing: border-box;
+.section-text {
+  @apply absolute bottom-0 left-0 pb-20;
+}
+
+.blog-header {
+  @apply text-[white] text-7xl font-bold pb-16 px-16 w-[50rem] text-left;
+}
+
+.blog-text {
+  @apply text-[white] text-xl w-[31rem] text-left px-16;
 }
 
 .form-body {
