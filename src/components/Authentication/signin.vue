@@ -225,7 +225,7 @@ export default {
               (this.firstname = ""),
               (this.lastname = ""),
               (this.gender = "");
-            this.$router.push("/");
+            this.$router.push("/todocomment");
           } else {
             //
           }
