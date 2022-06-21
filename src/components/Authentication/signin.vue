@@ -218,7 +218,10 @@ export default {
         gender: this.gender,
       };
       this.axios
-        .post("https://gorest.co.in/public/v2/users", payload)
+        .post(
+          "https://gorest.co.in/public/v2/users?access-token=7eab42576030ef17df54e3bef10de95d141a5bfa63dedd051f914fa74da12dfb",
+          payload
+        )
         .then((response) => {
           if (response.status === 200) {
             (this.email = ""),
