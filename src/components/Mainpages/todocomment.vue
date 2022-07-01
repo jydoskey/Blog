@@ -2,7 +2,27 @@
   <div class="todocomment">
     <Header class="fixed w-full bg-white top-0 z-50 top-nav"></Header>
     <div class="todocomment-body">
-
+      <div class="content form-height">
+        <form>
+          <input
+            v-model="thought"
+            name="thought"
+            type="text"
+            required
+            class="form-input"
+            placeholder="Share your thought"
+          />
+          <button type="submit" class="form-button">Post it</button>
+        </form>
+      </div>
+      <div class="content">
+        <h3>Daily Tasks</h3>
+        <div class="status">
+          <p @click="pendingColor()" :style="pending">Pending</p>
+          <p @click="progressColor()" :style="progress">Inprogress</p>
+          <p @click="completeColor()" :style="completed">Completed</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -12,11 +32,36 @@ import Header from "@/components/layout/Header.vue";
 export default {
   name: "todocomment",
   data() {
-    return {};
+    return {
+      thought: "",
+      pending:
+        "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px",
+      progress: "color:#262626",
+      completed: "color:#262626",
+    };
   },
-  mounted() {},
-  methods: {},
   components: { Header },
+  mounted() {},
+  methods: {
+    pendingColor() {
+      this.pending =
+        "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
+      this.progress = "color:#262626";
+      this.completed = "color:#262626";
+    },
+    progressColor() {
+      this.progress =
+        "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
+      this.pending = "color:#262626";
+      this.completed = "color:#262626";
+    },
+    completeColor() {
+      this.completed =
+        "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
+      this.pending = "color:#262626";
+      this.progress = "color:#262626";
+    },
+  },
 };
 </script>
 
@@ -32,10 +77,58 @@ export default {
   z-index: 2;
 }
 .todocomment {
-  @apply bg-[#F6F6F6] w-full h-screen md:flex block;
+  @apply bg-[#F6F6F6] h-screen;
 }
 
 .todocomment-body {
-    
+  @apply md:flex px-4 md:px-16 justify-between mt-[4.5rem];
+}
+
+.content {
+  @apply text-[#262626] bg-white py-6 w-full h-auto md:mx-4 px-6;
+}
+
+.content h3 {
+  @apply text-left font-bold text-[#262626] opacity-100 text-lg pb-3;
+}
+
+.status {
+  @apply bg-[#F1F7FE] flex justify-center rounded-2xl w-7/12 mr-auto ml-auto items-center;
+}
+
+.status p {
+  @apply font-bold text-xs cursor-pointer px-4 py-4;
+}
+
+form {
+  @apply flex;
+}
+
+.form-height {
+  @apply h-32;
+}
+
+.form-input {
+  @apply rounded-xl w-full h-[3.5rem] px-6 focus:outline-none text-sm bg-[#F1F7FE] text-[#AAAAAA] appearance-none
+   py-2 focus:border placeholder-gray-500 focus:bg-[white] focus:ring-[#B8CADE] focus:border-[#B8CADE] focus:z-10;
+}
+
+.form-button {
+  background: transparent
+    linear-gradient(
+      270deg,
+      #00c2ef 0%,
+      #00baef 9%,
+      #00a7f1 18%,
+      #0087f3 44%,
+      #005bf7 88%,
+      #0047f9 100%
+    )
+    0% 0% no-repeat padding-box;
+  @apply h-[3.5rem] w-4/12 ml-4 py-4 px-4 border border-transparent text-sm font-medium rounded-xl text-white cursor-pointer;
+}
+
+.form-button:hover {
+  background: #0047f9;
 }
 </style>
