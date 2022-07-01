@@ -13,10 +13,7 @@ const router = createRouter({
       name: 'todocomment',
       component: () => import('@/components/Mainpages/todocomment.vue')
     }
-  ],
-  scrollBehavior() {
-    document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
-  }
+  ]
 })
 
 export default router

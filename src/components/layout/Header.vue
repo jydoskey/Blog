@@ -120,6 +120,7 @@ export default {
 
 .nav-content {
   @apply flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-6 lg:px-16 text-lg lg:h-[75px];
+  border: 1px solid #B8CADE;
 }
 
 .home-logo {
