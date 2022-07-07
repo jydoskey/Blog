@@ -22,6 +22,20 @@
           <p @click="progressColor()" :style="progress">Inprogress</p>
           <p @click="completeColor()" :style="completed">Completed</p>
         </div>
+        <div class="task">
+          <team
+            teamHeader="Meeting with the team"
+            teamDate="20 June, 2022"
+            teamTime="11:00 A.M - 12:00 P.M"
+          >
+          </team>
+          <team
+            teamHeader="Design with M3 Team"
+            teamDate="20 June, 2022"
+            teamTime="11:00 A.M - 12:00 P.M"
+          >
+          </team>
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +43,7 @@
 
 <script>
 import Header from "@/components/layout/Header.vue";
+import Team from "@/components/team.vue";
 export default {
   name: "todocomment",
   data() {
@@ -40,8 +55,7 @@ export default {
       completed: "color:#262626",
     };
   },
-  components: { Header },
-  mounted() {},
+  components: { Team, Header },
   methods: {
     pendingColor() {
       this.pending =
@@ -85,7 +99,7 @@ export default {
 }
 
 .content {
-  @apply text-[#262626] bg-white py-6 w-full h-auto md:mx-4 px-6;
+  @apply text-[#262626] bg-white py-6 w-full h-auto md:mx-4 px-6 mb-3;
 }
 
 .content h3 {
@@ -93,11 +107,15 @@ export default {
 }
 
 .status {
-  @apply bg-[#F1F7FE] flex justify-center rounded-2xl w-7/12 mr-auto ml-auto items-center;
+  @apply bg-[#F1F7FE] flex justify-center rounded-2xl w-[18rem] mb-8 mr-auto ml-auto items-center;
 }
 
 .status p {
   @apply font-bold text-xs cursor-pointer px-4 py-4;
+}
+
+.task {
+  @apply md:flex justify-between;
 }
 
 form {
