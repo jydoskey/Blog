@@ -27,7 +27,6 @@ export default {
   name: "comment",
   data() {
     return {
-      thought: "",
     };
   },
   methods: {},
