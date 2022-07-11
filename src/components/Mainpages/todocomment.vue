@@ -2,39 +2,44 @@
   <div class="todocomment">
     <Header class="fixed w-full bg-white top-0 z-50 top-nav"></Header>
     <div class="todocomment-body">
-      <div class="content form-height">
-        <form>
-          <input
-            v-model="thought"
-            name="thought"
-            type="text"
-            required
-            class="form-input"
-            placeholder="Share your thought"
-          />
-          <button type="submit" class="form-button">Post it</button>
-        </form>
-      </div>
-      <div class="content">
-        <h3>Daily Tasks</h3>
-        <div class="status">
-          <p @click="pendingColor()" :style="pending">Pending</p>
-          <p @click="progressColor()" :style="progress">Inprogress</p>
-          <p @click="completeColor()" :style="completed">Completed</p>
+      <div class="container">
+        <div class="content form-height">
+          <form>
+            <input
+              v-model="thought"
+              name="thought"
+              type="text"
+              required
+              class="form-input"
+              placeholder="Share your thought"
+            />
+            <button type="submit" class="form-button">Post it</button>
+          </form>
         </div>
-        <div class="task">
-          <team
-            teamHeader="Meeting with the team"
-            teamDate="20 June, 2022"
-            teamTime="11:00 A.M - 12:00 P.M"
-          >
-          </team>
-          <team
-            teamHeader="Design with M3 Team"
-            teamDate="20 June, 2022"
-            teamTime="11:00 A.M - 12:00 P.M"
-          >
-          </team>
+        <Comment></Comment>
+      </div>
+      <div class="container">
+        <div class="content">
+          <h3>Daily Tasks</h3>
+          <div class="status">
+            <p @click="pendingColor()" :style="pending">Pending</p>
+            <p @click="progressColor()" :style="progress">Inprogress</p>
+            <p @click="completeColor()" :style="completed">Completed</p>
+          </div>
+          <div class="task">
+            <team
+              teamHeader="Meeting with the team"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+            <team
+              teamHeader="Design with M3 Team"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+          </div>
         </div>
       </div>
     </div>
@@ -44,6 +49,7 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Team from "@/components/team.vue";
+import Comment from "@/components/Mainpages/comment.vue";
 export default {
   name: "todocomment",
   data() {
@@ -55,7 +61,7 @@ export default {
       completed: "color:#262626",
     };
   },
-  components: { Team, Header },
+  components: { Team, Header, Comment },
   methods: {
     pendingColor() {
       this.pending =
@@ -90,6 +96,7 @@ export default {
   opacity: 1;
   z-index: 2;
 }
+
 .todocomment {
   @apply bg-[#F6F6F6] h-screen;
 }
@@ -98,8 +105,12 @@ export default {
   @apply md:flex px-4 md:px-16 justify-between mt-[4.5rem];
 }
 
+.container {
+  @apply md:mx-4;
+}
+
 .content {
-  @apply text-[#262626] bg-white py-6 w-full h-auto md:mx-4 px-6 mb-3;
+  @apply text-[#262626] bg-white py-6 w-full h-auto px-6 mb-3;
 }
 
 .content h3 {
