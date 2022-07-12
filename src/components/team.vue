@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .team {
   @apply py-3 pr-[60px] flex items-center pl-2 rounded-3xl border-[1px] mb-2 border-solid border-[#D2DCE8] bg-white bg-no-repeat bg-origin-padding;
   box-shadow: 0px 8px 16px #0000000a;
