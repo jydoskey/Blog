@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="comment">
     <img
       class="comment-img"
       src="@/assets/images/VanGoghByAmrit.png"
@@ -10,13 +10,31 @@
         <h3>Sandie Handy <span class="time">25 mins ago</span></h3>
         <span class="continuity">...</span>
       </span>
-      <p class="post-title">Designed this last night with Xd</p>
+      <p class="comment-title">Designed this last night with Xd</p>
       <div class="w-full">
         <img
-          class="blog-img"
+          class="post-img"
           src="@/assets/images/blog3.png"
           alt="blog image"
         />
+        <span class="comment-number">
+          <img
+            class="comment-profile"
+            src="@/assets/images/face1.png"
+            alt="face1"
+          />
+          <img
+            class="comment-profile -ml-1"
+            src="@/assets/images/face2.png"
+            alt="face2"
+          />
+          <img
+            class="comment-profile -ml-1"
+            src="@/assets/images/face3.png"
+            alt="face3"
+          />
+          <p>and 20 others already commented</p>
+        </span>
       </div>
     </span>
   </div>
@@ -26,8 +44,7 @@
 export default {
   name: "comment",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {},
 };
@@ -39,13 +56,7 @@ export default {
   box-sizing: border-box;
 }
 
-.top-nav {
-  background: #ffffff 0% 0% no-repeat padding-box;
-  opacity: 1;
-  z-index: 2;
-}
-
-.content {
+.comment {
   @apply text-[#262626] bg-white py-6 w-full h-auto px-6 mb-3 flex;
 }
 
@@ -53,11 +64,11 @@ export default {
   @apply rounded-2xl w-16 h-16 mr-6;
 }
 
-.content h3 {
+.comment h3 {
   @apply text-left font-bold text-[#262626] opacity-100 text-lg pb-1;
 }
 
-.post-title {
+.comment-title {
   @apply pb-4 text-[#262626] text-sm;
 }
 
@@ -70,11 +81,20 @@ export default {
   @apply text-sm font-extrabold;
 }
 
-.blog-img {
+.post-img {
   @apply rounded-2xl w-full;
 }
 
-form {
-  @apply flex;
+.comment-number {
+  @apply flex mt-1 justify-end items-center text-[#262626];
+}
+
+.comment-number p {
+  @apply text-xs ml-1;
+  font-size: 10px;
+}
+
+.comment-profile {
+  @apply w-5 h-5 border-solid border-[white] rounded-md;
 }
 </style>
