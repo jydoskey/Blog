@@ -16,7 +16,26 @@
             <button type="submit" class="form-button">Post it</button>
           </form>
         </div>
-        <Comment></Comment>
+        <Comment
+          userName="Sandie Handy"
+          postDescription="Designed this last night with Xd"
+          :imageName="blog3"
+        ></Comment>
+        <Comment
+          userName="Turban Toyface Man"
+          postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
+          :imageName="blog4"
+        ></Comment>
+        <Comment
+          userName="Johnson Johnston"
+          postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
+          :imageName="blog1"
+        ></Comment>
+        <Comment
+          userName="Johnson Johnston"
+          postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
+          :imageName="blog2"
+        ></Comment>
       </div>
       <div class="container">
         <div class="content">
@@ -54,6 +73,10 @@ export default {
   name: "todocomment",
   data() {
     return {
+      blog1: "src/assets/images/blog1.png",
+      blog2: "src/assets/images/blog2.png",
+      blog3: "src/assets/images/blog3.png",
+      blog4: "src/assets/images/blog4.png",
       thought: "",
       pending:
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px",
@@ -98,7 +121,7 @@ export default {
 }
 
 .todocomment {
-  @apply bg-[#F6F6F6] h-screen;
+  @apply bg-[#F6F6F6] h-full;
 }
 
 .todocomment-body {
