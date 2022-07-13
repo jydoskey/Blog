@@ -71,7 +71,7 @@ export default {
 }
 
 .comment {
-  @apply text-[#262626] bg-white py-6 w-full h-auto px-6 mb-3 flex;
+  @apply text-[#262626] bg-white py-6 w-full h-auto px-6 mb-3 flex rounded-3xl;
 }
 
 .comment-img {
