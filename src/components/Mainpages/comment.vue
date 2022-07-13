@@ -7,16 +7,12 @@
     />
     <span class="w-full">
       <span class="flex justify-between">
-        <h3>Sandie Handy <span class="time">25 mins ago</span></h3>
+        <h3>{{userName}} <span class="time">25 mins ago</span></h3>
         <span class="continuity">...</span>
       </span>
-      <p class="comment-title">Designed this last night with Xd</p>
-      <div class="w-full">
-        <img
-          class="post-img"
-          src="@/assets/images/blog3.png"
-          alt="blog image"
-        />
+      <p class="comment-title">{{postDescription}}</p>
+      <div class="w-full mb-2">
+        <img class="post-img" :src="imageName" alt="blog image" />
         <span class="comment-number">
           <img
             class="comment-profile"
@@ -36,17 +32,35 @@
           <p>and 20 others already commented</p>
         </span>
       </div>
+      <div class="w-full flex">
+        <span class="flex items-center mr-3"
+          ><img
+            class="circle"
+            src="@/assets/images/downvote.svg"
+            alt="downvote"
+          />
+          2</span
+        >
+        <span class="flex items-center"
+          ><img
+            class="circle"
+            src="@/assets/images/upvote.svg"
+            alt="downvote"
+          />
+          250</span
+        >
+      </div>
     </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: "comment",
   data() {
     return {};
   },
-  methods: {},
+  name: "comment",
+  props: ["imageName", "userName", "postDescription"],
 };
 </script>
 
@@ -96,5 +110,9 @@ export default {
 
 .comment-profile {
   @apply w-5 h-5 border-solid border-[white] rounded-md;
+}
+
+.circle {
+  @apply border-[#b8cadead] rounded-full border-solid border p-[5px] mr-3;
 }
 </style>
