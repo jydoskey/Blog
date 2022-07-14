@@ -29,7 +29,7 @@
         </span>
       </div>
       <div class="w-full flex">
-        <span class="flex items-center mr-3"
+        <span class="flex items-center mr-4"
           ><img
             class="circle"
             src="@/assets/images/downvote.svg"
@@ -37,12 +37,8 @@
           />
           2</span
         >
-        <span class="flex items-center mr-3"
-          ><img
-            class="circle"
-            src="@/assets/images/upvote.svg"
-            alt="upvote"
-          />
+        <span class="flex items-center mr-4"
+          ><img class="circle" src="@/assets/images/upvote.svg" alt="upvote" />
           250</span
         >
         <span class="flex items-center"
@@ -112,7 +108,6 @@ export default {
 }
 
 .circle {
-  @apply border-[#b8cadead] rounded-full border-solid border p-[5px] mr-3;
+  @apply border-[#b8cadead] rounded-full border-solid border p-[5px] mr-4 hover:bg-[#B8CADEAD] cursor-pointer;
 }
-
 </style>
