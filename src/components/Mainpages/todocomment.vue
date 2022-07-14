@@ -17,21 +17,25 @@
           </form>
         </div>
         <Comment
+          :profile="profile1"
           userName="Sandie Handy"
           postDescription="Designed this last night with Xd"
           :imageName="blog3"
         ></Comment>
         <Comment
+          :profile="profile2"
           userName="Turban Toyface Man"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
           :imageName="blog4"
         ></Comment>
         <Comment
+          :profile="profile1"
           userName="Johnson Johnston"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
           :imageName="blog1"
         ></Comment>
         <Comment
+          :profile="profile2"
           userName="Johnson Johnston"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
           :imageName="blog2"
@@ -73,6 +77,8 @@ export default {
   name: "todocomment",
   data() {
     return {
+      profile1: "src/assets/images/VanGoghByAmrit.png",
+      profile2: "src/assets/images/Indiahigh.png",
       blog1: "src/assets/images/blog1.png",
       blog2: "src/assets/images/blog2.png",
       blog3: "src/assets/images/blog3.png",
