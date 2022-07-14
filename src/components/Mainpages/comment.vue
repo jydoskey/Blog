@@ -1,16 +1,12 @@
 <template>
   <div class="comment">
-    <img
-      class="comment-img"
-      :src="profile"
-      alt="comment picture"
-    />
+    <img class="comment-img" :src="profile" alt="comment picture" />
     <span class="w-full">
       <span class="flex justify-between">
-        <h3>{{userName}} <span class="time">25 mins ago</span></h3>
+        <h3>{{ userName }} <span class="time">25 mins ago</span></h3>
         <span class="continuity">...</span>
       </span>
-      <p class="comment-title">{{postDescription}}</p>
+      <p class="comment-title">{{ postDescription }}</p>
       <div class="w-full mb-2">
         <img class="post-img" :src="imageName" alt="blog image" />
         <span class="comment-number">
@@ -92,7 +88,7 @@ export default {
 }
 
 .continuity {
-  @apply text-sm font-extrabold;
+  @apply text-sm font-extrabold cursor-pointer px-[9px] py-[4px] hover:bg-[#F1F7FE] hover:rounded-full ease-in;
 }
 
 .post-img {
