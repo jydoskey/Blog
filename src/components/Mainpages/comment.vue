@@ -2,7 +2,7 @@
   <div class="comment">
     <img
       class="comment-img"
-      src="@/assets/images/VanGoghByAmrit.png"
+      :src="profile"
       alt="comment picture"
     />
     <span class="w-full">
@@ -60,7 +60,7 @@ export default {
     return {};
   },
   name: "comment",
-  props: ["imageName", "userName", "postDescription"],
+  props: ["profile", "imageName", "userName", "postDescription"],
 };
 </script>
 
