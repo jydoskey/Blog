@@ -37,14 +37,17 @@
           />
           2</span
         >
-        <span class="flex items-center"
+        <span class="flex items-center mr-3"
           ><img
             class="circle"
             src="@/assets/images/upvote.svg"
-            alt="downvote"
+            alt="upvote"
           />
           250</span
         >
+        <span class="flex items-center"
+          ><img class="circle" src="@/assets/images/reply.svg" alt="reply"
+        /></span>
       </div>
     </span>
   </div>
@@ -111,4 +114,5 @@ export default {
 .circle {
   @apply border-[#b8cadead] rounded-full border-solid border p-[5px] mr-3;
 }
+
 </style>
