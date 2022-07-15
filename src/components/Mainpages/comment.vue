@@ -7,7 +7,7 @@
         <span class="continuity">...</span>
       </span>
       <p class="comment-title">{{ postDescription }}</p>
-      <div class="w-full mb-2">
+      <div class="w-full mb-3">
         <img class="post-img" :src="imageName" alt="blog image" />
         <span class="comment-number">
           <img
@@ -28,7 +28,7 @@
           <p>and 20 others already commented</p>
         </span>
       </div>
-      <div class="w-full flex">
+      <div class="flex flex-wrap">
         <span class="flex items-center mr-4"
           ><img
             class="circle"
@@ -41,9 +41,18 @@
           ><img class="circle" src="@/assets/images/upvote.svg" alt="upvote" />
           250</span
         >
-        <span class="flex items-center"
+        <span class="flex items-center mr-2"
           ><img class="circle" src="@/assets/images/reply.svg" alt="reply"
         /></span>
+        <form>
+          <input
+            name="comment"
+            type="text"
+            required
+            class="form-input md:mt-0 mt-2 w-full"
+            placeholder="Comment here"
+          />
+        </form>
       </div>
     </span>
   </div>
@@ -74,7 +83,7 @@ export default {
 }
 
 .comment h3 {
-  @apply text-left font-bold text-[#262626] opacity-100 text-lg pb-1;
+  @apply text-left font-bold text-[#262626] opacity-100 md:text-lg pb-1;
 }
 
 .comment-title {
@@ -108,6 +117,11 @@ export default {
 }
 
 .circle {
-  @apply border-[#b8cadead] rounded-full border-solid border p-[5px] mr-4 hover:bg-[#B8CADEAD] cursor-pointer;
+  @apply border-[#b8cadead] rounded-full border-solid border p-[3px] md:p-[5px] md:mr-4 mr-2 hover:bg-[#B8CADEAD] cursor-pointer;
+}
+
+.form-input {
+  @apply rounded-2xl h-[2.5rem] px-6 focus:outline-none text-sm bg-[#F1F7FE] text-[#AAAAAA] appearance-none
+   py-2 focus:border placeholder-gray-500 focus:bg-[white];
 }
 </style>
