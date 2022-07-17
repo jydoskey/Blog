@@ -1,6 +1,10 @@
 # Preview
 
-![Blog Webapp Preview](https://github.com/jydoskey/Blog/blob/main/src/assets/images/preview.png)
+## Login View
+![Blog Webapp Login](https://github.com/jydoskey/Blog/blob/main/src/assets/images/preview.png)
+
+## Home View
+![Blog Webapp Portal](https://github.com/jydoskey/Blog/blob/main/src/assets/images/homeportal.png)
 
 ## Recommended IDE Setup
 
