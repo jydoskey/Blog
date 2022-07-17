@@ -49,7 +49,33 @@
             <p @click="progressColor()" :style="progress">Inprogress</p>
             <p @click="completeColor()" :style="completed">Completed</p>
           </div>
-          <div class="task">
+          <div class="task" v-show="progressView">
+            <team
+              teamHeader="FigJam using Figma"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+            <team
+              teamHeader="Tweak UIs in Xd"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+          </div>
+          <div class="task !flex-wrap" v-show="completeView">
+            <team
+              teamHeader="Usability testing"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+            <team
+              teamHeader="Test UIs Accessibility"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
             <team
               teamHeader="Meeting with the team"
               teamDate="20 June, 2022"
@@ -57,7 +83,7 @@
             >
             </team>
             <team
-              teamHeader="Design with M3 Team"
+              teamHeader="Board Meeting"
               teamDate="20 June, 2022"
               teamTime="11:00 A.M - 12:00 P.M"
             >
@@ -88,6 +114,8 @@ export default {
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px",
       progress: "color:#262626",
       completed: "color:#262626",
+      progressView: false,
+      completeView: false,
     };
   },
   components: { Team, Header, Comment },
@@ -103,12 +131,16 @@ export default {
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
       this.pending = "color:#262626";
       this.completed = "color:#262626";
+      this.progressView = true;
+      this.completeView = false;
     },
     completeColor() {
       this.completed =
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
       this.pending = "color:#262626";
       this.progress = "color:#262626";
+      this.progressView = false;
+      this.completeView = true;
     },
   },
 };
