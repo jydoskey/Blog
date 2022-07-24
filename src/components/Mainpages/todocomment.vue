@@ -49,6 +49,20 @@
             <p @click="progressColor()" :style="progress">Inprogress</p>
             <p @click="completeColor()" :style="completed">Completed</p>
           </div>
+          <div class="task" v-show="pendingView">
+            <team
+              teamHeader="Meeting with the team"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+            <team
+              teamHeader="Design with M3 Team"
+              teamDate="20 June, 2022"
+              teamTime="11:00 A.M - 12:00 P.M"
+            >
+            </team>
+          </div>
           <div class="task" v-show="progressView">
             <team
               teamHeader="FigJam using Figma"
@@ -116,6 +130,7 @@ export default {
       completed: "color:#262626",
       progressView: false,
       completeView: false,
+      pendingView: true,
     };
   },
   components: { Team, Header, Comment },
@@ -125,12 +140,16 @@ export default {
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
       this.progress = "color:#262626";
       this.completed = "color:#262626";
+      this.pendingView = true;
+      this.progressView = false;
+      this.completeView = false;
     },
     progressColor() {
       this.progress =
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
       this.pending = "color:#262626";
       this.completed = "color:#262626";
+      this.pendingView = false;
       this.progressView = true;
       this.completeView = false;
     },
@@ -139,6 +158,7 @@ export default {
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px";
       this.pending = "color:#262626";
       this.progress = "color:#262626";
+      this.pendingView = false;
       this.progressView = false;
       this.completeView = true;
     },
