@@ -62,7 +62,9 @@
               teamTime="11:00 A.M - 12:00 P.M"
             >
             </team>
-            <div class="new-task"></div>
+            <div class="new-task">
+              <a class="plus"></a>
+            </div>
           </div>
           <div class="task" v-show="progressView">
             <team
@@ -196,7 +198,23 @@ export default {
 }
 
 .new-task {
-  @apply border-dashed py-3 w-[262.84px] h-[130px] rounded-3xl border-2 md:mb-3 md:ml-2 mx-auto border-[#D2DCE8] bg-[#FCFCFC] bg-no-repeat bg-origin-padding;
+  @apply py-3 w-[262.84px] h-[130px] rounded-3xl md:mb-3 md:ml-2 mx-auto bg-[#FCFCFC] bg-no-repeat bg-origin-padding;
+  border: 3px dashed #b8cade;
+}
+
+.plus {
+  @apply h-6 w-6 absolute left-2/4 top-11;
+}
+.plus:before,
+.plus:after {
+  content: " ";
+  @apply bg-[#b8cade] w-1 h-6 absolute;
+}
+.plus:before {
+  transform: rotate(90deg);
+}
+.plus:after {
+  transform: rotate(-180deg);
 }
 
 .content h3 {
