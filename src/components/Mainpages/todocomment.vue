@@ -49,7 +49,7 @@
             <p @click="progressColor()" :style="progress">Inprogress</p>
             <p @click="completeColor()" :style="completed">Completed</p>
           </div>
-          <div class="task" v-show="pendingView">
+          <div class="task !flex-wrap" v-show="pendingView">
             <team
               teamHeader="Meeting with the team"
               teamDate="20 June, 2022"
@@ -62,6 +62,7 @@
               teamTime="11:00 A.M - 12:00 P.M"
             >
             </team>
+            <div class="new-task"></div>
           </div>
           <div class="task" v-show="progressView">
             <team
@@ -192,6 +193,10 @@ export default {
 
 .content {
   @apply text-[#262626] bg-white py-6 w-full h-auto px-6 mb-3;
+}
+
+.new-task {
+  @apply border-dashed py-3 w-[262.84px] h-[130px] rounded-3xl border-2 md:mb-3 md:ml-2 mx-auto border-[#D2DCE8] bg-[#FCFCFC] bg-no-repeat bg-origin-padding;
 }
 
 .content h3 {
