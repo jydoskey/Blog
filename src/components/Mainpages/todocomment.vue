@@ -107,6 +107,26 @@
             </team>
           </div>
         </div>
+        <div class="content rounded-3xl">
+          <h3>What's trending on Blogit</h3>
+          <div class="line-break"></div>
+          <div class="comment">
+            <img class="comment-img" src="@/assets/images/lion.png" alt="comment picture" />
+            <span class="w-full">
+              <span class="flex justify-between items-center mb-3">
+                <h3>
+                  Premier teams all set for the new season
+                  <img class="w-3 ml-2" src="@/assets/images/verified.svg" alt="verified"/>
+                </h3>
+                <span class="time">25 mins ago</span>
+              </span>
+              <p class="comment-title">
+                Upon the release of the 2022/2 season all teams are set on fire
+                for the upcoming season. Oh, Premier League how I love You.
+              </p>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -263,5 +283,30 @@ form {
 
 .form-button:hover {
   background: #0047f9;
+}
+
+.line-break {
+  @apply border border-t-[1px] border-solid border-[#B8CADE] -mx-6 opacity-50;
+}
+
+.comment {
+  @apply text-[#262626] bg-white pt-5 pb-1 w-full h-auto mb-3 flex rounded-3xl;
+}
+
+.comment-img {
+  @apply rounded-2xl w-16 h-16 mr-6;
+}
+
+.comment h3 {
+  @apply text-left font-bold text-[#262626] opacity-100 md:text-lg pb-1 flex;
+}
+
+.comment-title {
+  @apply text-[#262626] text-sm;
+}
+
+.time {
+  @apply text-[#AAAAAA] ml-4;
+  font-size: 9px;
 }
 </style>
