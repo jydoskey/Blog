@@ -28,7 +28,7 @@
           <p>and 20 others already commented</p>
         </span>
       </div>
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap pb-3 justify-around items-center">
         <span class="flex items-center mr-4"
           ><img
             class="circle"
@@ -49,7 +49,7 @@
             name="comment"
             type="text"
             required
-            class="form-input md:mt-0 mt-2 w-full"
+            class="form-input md:mt-0 mt-2"
             placeholder="Comment here"
           />
         </form>
