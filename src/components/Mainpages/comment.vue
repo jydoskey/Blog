@@ -4,7 +4,27 @@
     <span class="w-full">
       <span class="flex justify-between">
         <h3>{{ userName }} <span class="time">25 mins ago</span></h3>
-        <span class="continuity">...</span>
+        <span class="continuity" @click="popupOpen()"
+          >...
+          <span class="popup" v-show="popup"
+            ><p class="flex text-sm pb-2">
+              <img
+                class="pr-2 w-5"
+                src="@/assets/images/caution.svg"
+                alt="caution"
+              />
+              turn on notification
+            </p>
+            <p class="flex text-sm">
+              <img
+                class="pr-2 w-5"
+                src="@/assets/images/hazard.svg"
+                alt="hazard"
+              />
+              stop seeing this post
+            </p></span
+          >
+        </span>
       </span>
       <p class="comment-title">{{ postDescription }}</p>
       <div class="w-full mb-3">
@@ -28,7 +48,7 @@
           <p>and 20 others already commented</p>
         </span>
       </div>
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap pb-3 justify-around items-center">
         <span class="flex items-center mr-4"
           ><img
             class="circle"
@@ -49,7 +69,7 @@
             name="comment"
             type="text"
             required
-            class="form-input md:mt-0 mt-2 w-full"
+            class="form-input md:mt-0 mt-2"
             placeholder="Comment here"
           />
         </form>
@@ -61,10 +81,21 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      popup: false,
+    };
   },
   name: "comment",
   props: ["profile", "imageName", "userName", "postDescription"],
+  methods: {
+    popupOpen() {
+      if (this.popup === false) {
+        this.popup = true;
+      } else if (this.popup === true) {
+        this.popup = false;
+      }
+    },
+  },
 };
 </script>
 
@@ -96,7 +127,13 @@ export default {
 }
 
 .continuity {
-  @apply text-sm font-extrabold cursor-pointer px-[9px] py-[4px] hover:bg-[#F1F7FE] hover:rounded-full ease-in;
+  @apply text-sm font-extrabold cursor-pointer px-[9px] py-[4px] hover:bg-[#F1F7FE] hover:rounded-full ease-in relative;
+}
+
+.popup {
+  @apply absolute p-4 -left-48 z-10 bg-white rounded-2xl;
+  box-shadow: 0px 8px 16px #00000014;
+  border: 1px solid #d2dce8;
 }
 
 .post-img {
