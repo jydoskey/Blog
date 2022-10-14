@@ -18,80 +18,17 @@
         </div>
         <div>
           <section class="blog-form">
-            <div class="form-body" v-if="signin">
+            <div class="form-body">
               <div class="max-w-md w-full space-y-8">
                 <div>
                   <h2 class="mt-6 text-left text-3xl font-bold text-gray-900">
-                    Log in
+                    Sign in
                   </h2>
                   <div class="font-medium">
-                    or
-                    <span
-                      class="!text-[#00C2EF] cursor-pointer"
-                      @click="signUp()"
-                      >sign up to create an account</span
-                    >
-                  </div>
-                </div>
-                <form class="mt-8 space-y-6" @submit="submit($event)">
-                  <input type="hidden" name="remember" value="true" />
-                  <div class="-space-y-px">
-                    <div class="mb-5">
-                      <label for="email-address" class="sr-only"
-                        >Email address</label
-                      >
-                      <input
-                        v-model="email"
-                        id="email"
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        required
-                        class="form-input"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div>
-                      <label for="password" class="sr-only">Password</label>
-                      <input
-                        v-model="password"
-                        id="password"
-                        name="password"
-                        type="password"
-                        required
-                        class="form-input"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div class="flex justify-between pt-6">
-                      <label class="block text-gray-500 font-bold items-center">
-                        <input class="mr-2" type="checkbox" />
-                        <span class="text-sm"> Remember password </span>
-                      </label>
-                      <label class="block text-gray-500 font-bold">
-                        <span class="text-sm"> Forgot password? </span>
-                      </label>
-                    </div>
-                  </div>
-                  <div>
-                    <button type="submit" class="form-button">Log in</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <div class="form-body" v-else-if="signup">
-              <div class="max-w-md w-full space-y-8">
-                <div>
-                  <h2 class="mt-6 text-left text-3xl font-bold text-gray-900">
-                    Sign up
-                  </h2>
-                  <div class="font-medium">
-                    or
                     <span
                       class="!text-[#00C2EF] cursor-pointer"
                       @click="signIn()"
-                      >log in to your account</span
+                      >A platform serving all</span
                     >
                   </div>
                 </div>
@@ -132,6 +69,29 @@
                       class="form-input"
                       placeholder="Email"
                     />
+                  </div>
+                  <div class="my-5 flex justify-start">
+                    <div class="mr-3">
+                      <input
+                        type="radio"
+                        class="mr-2 items-center"
+                        id="male"
+                        value="male"
+                        v-model="gender"
+                      />
+                      <label for="male">Male</label>
+                    </div>
+
+                    <div class="mr-3">
+                      <input
+                        type="radio"
+                        class="mr-2 items-center"
+                        id="female"
+                        value="female"
+                        v-model="gender"
+                      />
+                      <label for="female">Female</label>
+                    </div>
                   </div>
                   <div>
                     <div class="flex flex-wrap -mx-3">
@@ -175,7 +135,7 @@
                     </label>
                   </div>
                   <div>
-                    <button type="submit" class="form-button">Sign up</button>
+                    <button type="submit" class="form-button">Sign in</button>
                   </div>
                 </form>
               </div>
@@ -192,8 +152,6 @@ export default {
   name: "signin",
   data() {
     return {
-      signin: true,
-      signup: false,
       email: "",
       firstname: "",
       lastname: "",
@@ -202,20 +160,13 @@ export default {
     };
   },
   methods: {
-    signIn() {
-      this.signin = true;
-      this.signup = false;
-    },
-    signUp() {
-      this.signin = false;
-      this.signup = true;
-    },
     submit(event) {
       event.preventDefault();
       var payload = {
         email: this.email,
-        name: this.firstname + this.lastname,
+        name: this.firstname + " " + this.lastname,
         gender: this.gender,
+        status: "active",
       };
       this.axios
         .post(
@@ -223,7 +174,7 @@ export default {
           payload
         )
         .then((response) => {
-          if (response.status === 200) {
+          if (response.status == 201) {
             (this.email = ""),
               (this.firstname = ""),
               (this.lastname = ""),
