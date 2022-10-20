@@ -17,28 +17,28 @@
           </form>
         </div>
         <Comment
-          :profile="profile1"
+          profile="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/VanGoghByAmrit.png"
           userName="Sandie Handy"
           postDescription="Designed this last night with Xd"
-          :imageName="blog3"
+          imageName="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/blog3.png"
         ></Comment>
         <Comment
-          :profile="profile2"
+          profile="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/Indiahigh.png"
           userName="Turban Toyface Man"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
-          :imageName="blog4"
+          imageName="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/blog4.png"
         ></Comment>
         <Comment
-          :profile="profile1"
+          profile="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/VanGoghByAmrit.png"
           userName="Johnson Johnston"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
-          :imageName="blog1"
+          imageName="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/blog1.png"
         ></Comment>
         <Comment
-          :profile="profile2"
+          profile="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/Indiahigh.png"
           userName="Johnson Johnston"
           postDescription="The life of developer with a good design team in the field makes life pops like popcorn"
-          :imageName="blog2"
+          imageName="https://raw.githubusercontent.com/jydoskey/Blog/main/src/assets/images/blog2.png"
         ></Comment>
       </div>
       <div class="container">
@@ -140,12 +140,6 @@ export default {
   name: "todocomment",
   data() {
     return {
-      profile1: "src/assets/images/VanGoghByAmrit.png",
-      profile2: "src/assets/images/Indiahigh.png",
-      blog1: "src/assets/images/blog1.png",
-      blog2: "src/assets/images/blog2.png",
-      blog3: "src/assets/images/blog3.png",
-      blog4: "src/assets/images/blog4.png",
       thought: "",
       pending:
         "color:#0047F9; background-color:white; padding: 0.5rem 0.6rem; border-radius: 10px",
@@ -206,7 +200,7 @@ export default {
 }
 
 .todocomment-body {
-  @apply md:flex px-4 md:px-16 justify-between mt-[4.5rem];
+  @apply md:flex px-4 md:px-16 justify-between mt-[4.5rem] pb-8;
 }
 
 .container {
